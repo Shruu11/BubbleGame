@@ -1,0 +1,203 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, #74ebd5, #9face6); /* nice gradient */
+}
+
+/* Main container */
+#main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+/* Game Panel */
+#panel {
+  overflow: hidden;
+  width: 80%;
+  height: 80%;
+  border-radius: 12px;
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Top Bar */
+#ptop {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+  height: 100px;
+  background: #01415a;
+  color: #fff;
+  border-bottom: 3px solid #012d40;
+}
+
+.elem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.elem h2 {
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.box {
+  background-color: #fff;
+  padding: 10px 20px;
+  border-radius: 8px;
+  color: #01415a;
+  font-weight: 700;
+  font-size: 18px;
+  min-width: 60px;
+  text-align: center;
+  box-shadow: inset 2px 2px 5px #ccc, inset -2px -2px 5px #eee;
+}
+
+/* Bubble Area */
+#pbtm {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  padding: 20px;
+  flex-grow: 1;
+  background: #f7faff;
+  overflow-y: auto;
+}
+
+.bubble {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 70px;
+  height: 70px;
+  margin: 5px;
+  background: linear-gradient(135deg, #a8a8f5, #6c63ff);
+  color: #fff;
+  border-radius: 50%;
+  font-weight: bold;
+  font-size: 20px;
+  cursor: pointer;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.bubble.remove {
+  opacity: 0;
+  transform: scale(0);
+}
+
+.bubble:hover {
+  background: linear-gradient(135deg, #5a54e3, #3f3acb);
+  transform: scale(1.1);
+}
+
+/* Restart Button */
+#restartBtn {
+  padding: 10px 20px;
+  background: #ff4757;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+
+#restartBtn:hover {
+  background: #e84118;
+  transform: scale(1.05);
+}
+
+/* Game Over Message */
+#pbtm h1 {
+  font-size: 28px;
+  color: #333;
+  text-align: center;
+}
+/* ✅ Responsive Design */
+@media (max-width: 1200px) {
+  #panel {
+    width: 90%;
+    height: 85%;
+  }
+  #ptop {
+    flex-direction: column;
+    height: auto;
+    padding: 10px;
+    gap: 10px;
+  }
+  .elem {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  #panel {
+    width: 95%;
+    height: 85%;
+  }
+  .bubble {
+    width: 60px;
+    height: 60px;
+    font-size: 18px;
+  }
+  #ptop {
+    flex-direction: column;
+    height: auto;
+    padding: 12px;
+    gap: 15px;
+  }
+  .elem h2 {
+    font-size: 16px;
+  }
+  .box {
+    font-size: 16px;
+    padding: 8px 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  #panel {
+    width: 100%;
+    height: 90%;
+    border-radius: 0;
+  }
+  #ptop {
+    flex-direction: column;
+    text-align: center;
+    padding: 8px;
+    gap: 10px;
+  }
+  .bubble {
+    width: 50px;
+    height: 50px;
+    font-size: 16px;
+  }
+  #restartBtn {
+    font-size: 14px;
+    padding: 8px 14px;
+  }
+  #pbtm {
+    padding: 10px;
+    gap: 8px;
+  }
+}
